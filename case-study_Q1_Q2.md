@@ -99,15 +99,15 @@ __Cluster networking__ , I use the default value.
 - This worker app will process the votes via reading from the Redis and than update the PostgreSQL databse. It runs on .NET server.
 
 #### Redis Database:
-- Act as in memory to store the votes and listening on port port 6379. Can be access by both Voting app and Worker app.
+- Act as in memory to store the votes and listening on port port 6379. Can be access by both Vote app and Worker app.
 
 #### PostgreSQL(db) Database:
 - Maintains aggregated vote counts with a service listening on port 5432. Can be access by both Worker app and Result app.
 
 ### Data Flow
-1. Users will see a web the voting web page that is hosted on the Vote app.
+1. Users will see a voting web page that is hosted on the Vote app.
 2. Once user had selected their voting, the vote will send to Redis app database.
-3. The Worker app will grab the vote data and than update the PostgreSQL database by incrementing the counts.
+3. The Worker app will grab the vote data from Redis app database and than update the PostgreSQL database by incrementing the counts.
 4. The user can see the vote result via the Result app page. The Result app pulls the data from PostgreSQL database for the result.
 
 ## Additional Notes
