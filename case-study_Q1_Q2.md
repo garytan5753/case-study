@@ -80,8 +80,8 @@ __Cluster networking__ , I use the default value.
 
 18. Open multiple page of Vote page (using Browser Incognito mode) to vote it. On parrallel monitor the result at result page.
 
-- Vote app URL: https://34.47.220.219/  
-- Result app URL: http://35.200.244.1/  
+- Vote app URL: http://34.47.220.219/ 
+- Result app URL: http://35.200.244.1/
 
 ![GCP16](./image/GCP_16.jpg)
 
