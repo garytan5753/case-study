@@ -19,6 +19,7 @@ on Wireshark (preferable related to IMS).
 #### Call Flow Breakdown/Anaysis
 
 1. INVITE (from 201@10.33.6.101 to 101@10.33.6.102)
+
 ![SIP2](./image/SIP_2.jpg)
 
 - From the `From` & `To` header, we can see that this initial INVITE is send from `201@10.33.6.101 to 101@10.33.6.102`
@@ -30,6 +31,7 @@ on Wireshark (preferable related to IMS).
 
 3. INVITE (Proxy forwards to 101@10.33.6.102)
 - The proxy add it's own Via header - `SIP/2.0/UDP 10.33.6.102:5080;branch=z9hG4bKac49822475`
+
 ![SIP3](./image/SIP_3.jpg)
 
 4. 100 Trying (from called Party B to proxy)
@@ -45,6 +47,7 @@ Provisional response from the Called party.
 7. 200 OK (from called party to proxy)
 - Call is answered
 - Contains SDP Answer with media capabilities that had been agreed.
+
 ![SIP4](./image/SIP_4.jpg)
 
 8. 200 OK (proxy forwards to calling party)
@@ -56,6 +59,7 @@ Provisional response from the Called party.
 10. BYE (from called party to calling party)
 - Call termination initiated by callee
 - `Reason: Q.850 ;cause=16 ;text="local".` Which `16` is a normal call clearing.
+
 ![SIP5](./image/SIP_5.jpg)
 
 11. 200 OK (from calling party to called party)
@@ -99,6 +103,6 @@ Provisional response from the Called party.
 
 8. This indicates the call has no active media streams, which the SIP Server may reject.
 
-9. So for this scenario require to check on the `192.168.8.182 (Softphone)` side why it does not send valid media line or did they configure the correct Codecs to use. 
+9. So for this scenario require to check on the `192.168.8.182 (Softphone)` side why it does not send valid media line or did doesit configure the correct Codecs to use. 
 
-10.  This can be categorize as `SDP Content Issues` or `Codec Mismatch`. 
+10.  I be categorize as `SDP Content Issues` or `Codec Mismatch`. 
